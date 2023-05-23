@@ -1,20 +1,26 @@
 \documentclass[12pt]{report} 
 \usepackage[utf8]{inputenc}	% für direkte Eingabe von ß, ö, ä 
 \usepackage{ngerman}	% Sprachanpassung Deutsch
-
 \usepackage{graphicx} % Graphikeinbindung
 \usepackage{geometry} % Seitenränder
 \geometry{a4paper,left=25mm,right=20mm, top=10mm, bottom=20mm}
 
 \renewcommand*{\familydefault}{\sfdefault}%Verwenden einer Serifenlosen Schrift
-\usepackage{graphicx} % Required for inserting images   
+\usepackage{graphicx} % Required for inserting images
+\setcounter{chapter}{1}
 
 \begin{document}
-\include{sections/titlepage}
+\input{sections/titlepage.tex}
+\pagenumbering{roman} 
 \tableofcontents
 \newpage
-\include{sections/introduction}
 
-\section{Introduction}
+\input{sections/abstract.tex}
+\newpage
+\input{sections/zusammenfassung.tex}
+\newpage
+
+\cleardoublepage\pagenumbering{arabic}
+\input{sections/introduction.tex}
 
 \end{document}
