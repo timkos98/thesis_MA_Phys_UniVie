@@ -1,32 +1,41 @@
-\documentclass[12pt]{report} 
+\documentclass[12pt,twoside]{report} 
 \usepackage[utf8]{inputenc}	% für direkte Eingabe von ß, ö, ä 
 \usepackage{ngerman}	% Sprachanpassung Deutsch
 \usepackage{graphicx} % Graphikeinbindung
-\usepackage{geometry} % Seitenränder
+\usepackage{geometry} % Seitenrände
 \geometry{a4paper,left=25mm,right=20mm, top=10mm, bottom=20mm}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{titlesec}
 
-\renewcommand*{\familydefault}{\sfdefault}%Verwenden einer Serifenlosen Schrift
-\usepackage{graphicx} % Required for inserting images
-\setcounter{chapter}{1}
+% Redefine chapter format to omit "Chapter"
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries}{\thechapter}{0.5em}{}
 
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+%%%%%%%%%%%%%% CONTENTS %%%%%%%%%%%%%%%%
+%%%%% UNNUMBERED
 \begin{document}
 \input{sections/titlepage.tex}
 \pagenumbering{roman} 
 \tableofcontents
 \newpage
-
+%% Abstract %%
 \input{sections/abstract.tex}
 \newpage
 \input{sections/zusammenfassung.tex}
-\newpage
-
+%%%%%% NUMBERED
+\setcounter{chapter}{0}
 \cleardoublepage\pagenumbering{arabic} 
 %% Introduction %%
 \input{sections/introduction.tex}
 \newpage
 %% Background and theories %%
+\input{sections/background.tex}
+\newpage
+%% My work! %%
+\input{sections/myWork.tex}
 
-
-%%  %%
 
 \end{document}
